@@ -70,17 +70,17 @@
             <div class="flex items-center gap-2">
               <label for="language" class="font-semibold">Lenguaje:</label>
               <select id="language" name="language" class="cursor-pointer p-2 rounded-lg border-2">
-                <option value="cpp" {% if request.form.get('language') == 'cpp' %}selected{% endif %}>C++</option>
-                <option value="cs" {% if request.form.get('language') == 'cs' %}selected{% endif %}>C#</option>
-                <option value="sql" {% if request.form.get('language') == 'sql' %}selected{% endif %}>SQL</option>
-                <option value="css" {% if request.form.get('language') == 'css' %}selected{% endif %}>CSS</option>
-                <option value="javascript" {% if request.form.get('language') == 'javascript' %}selected{% endif %}>JavaScript</option>
-                <option value="python" {% if request.form.get('language') == 'python' %}selected{% endif %}>Python</option>
-                <option value="html" {% if request.form.get('language') == 'html' %}selected{% endif %}>HTML</option>
-                <option value="json" {% if request.form.get('language') == 'json' %}selected{% endif %}>JSON</option>
-                <option value="java" {% if request.form.get('language') == 'java' %}selected{% endif %}>Java</option>
-                <option value="rust" {% if request.form.get('language') == 'rust' %}selected{% endif %}>Rust</option>
-                <option value="go" {% if request.form.get('language') == 'go' %}selected{% endif %}>Go</option>
+                <option value="cpp" {% if language == 'cpp' %}selected{% endif %}>C++</option>
+                <option value="cs" {% if language == 'cs' %}selected{% endif %}>C#</option>
+                <option value="sql" {% if language == 'sql' %}selected{% endif %}>SQL</option>
+                <option value="css" {% if language == 'css' %}selected{% endif %}>CSS</option>
+                <option value="javascript" {% if language == 'javascript' %}selected{% endif %}>JavaScript</option>
+                <option value="python" {% if language == 'python' %}selected{% endif %}>Python</option>
+                <option value="html" {% if language == 'html' %}selected{% endif %}>HTML</option>
+                <option value="json" {% if language == 'json' %}selected{% endif %}>JSON</option>
+                <option value="java" {% if language == 'java' %}selected{% endif %}>Java</option>
+                <option value="rust" {% if language == 'rust' %}selected{% endif %}>Rust</option>
+                <option value="go" {% if language == 'go' %}selected{% endif %}>Go</option>
               </select>
             </div>
 
@@ -88,30 +88,31 @@
               <label for="theme" class="font-semibold">Tema:</label>
               <select id="theme" name="theme" class="cursor-pointer p-2 rounded-lg border-2">
                 <optgroup label="Alto Contraste">
-                  <option value="bw" {% if request.form.get('theme') == 'bw' %}selected{% endif %}>BW</option>
-                  <option value="igor" {% if request.form.get('theme') == 'igor' %}selected{% endif %}>Igor</option>
-                  <option value="rrt" {% if request.form.get('theme') == 'rrt' %}selected{% endif %}>RRT</option>
+                  <option value="bw" {% if theme == 'bw' %}selected{% endif %}>BW</option>
+                  <option value="igor" {% if theme == 'igor' %}selected{% endif %}>Igor</option>
+                  <option value="rrt" {% if theme == 'rrt' %}selected{% endif %}>RRT</option>
                 </optgroup>
                 <optgroup label="Oscuros">
-                  <option value="monokai" {% if request.form.get('theme') == 'monokai' %}selected{% endif %}>Monokai</option>
-                  <option value="github-dark" {% if request.form.get('theme') == 'github-dark' %}selected{% endif %}>GitHub</option>
-                  <option value="dracula" {% if request.form.get('theme') == 'dracula' or not request.form.get('theme') %}selected{% endif %}>Dracula</option>
-                  <option value="native" {% if request.form.get('theme') == 'native' %}selected{% endif %}>Native</option>
-                  <option value="nord" {% if request.form.get('theme') == 'nord' %}selected{% endif %}>Nord</option>
-                  <option value="one-dark" {% if request.form.get('theme') == 'one-dark' %}selected{% endif %}>One Dark</option>
-                  <option value="material" {% if request.form.get('theme') == 'material' %}selected{% endif %}>Material</option>
+                  <option value="monokai" {% if theme == 'monokai' %}selected{% endif %}>Monokai</option>
+                  <option value="github-dark" {% if theme == 'github-dark' %}selected{% endif %}>GitHub</option>
+                  <option value="dracula" {% if theme == 'dracula' %}selected{% endif %}>Dracula</option>
+                  <option value="native" {% if theme == 'native' %}selected{% endif %}>Native</option>
+                  <option value="nord" {% if theme == 'nord' %}selected{% endif %}>Nord</option>
+                  <option value="one-dark" {% if theme == 'one-dark' %}selected{% endif %}>One Dark</option>
+                  <option value="material" {% if theme == 'material' %}selected{% endif %}>Material</option>
                 </optgroup>
                 <optgroup label="Claros">
-                  <option value="vs" {% if request.form.get('theme') == 'vs' %}selected{% endif %}>VS</option>
-                  <option value="solarized-light" {% if request.form.get('theme') == 'solarized-light' %}selected{% endif %}>Solarized</option>
+                  <option value="vs" {% if theme == 'vs' %}selected{% endif %}>VS</option>
+                  <option value="solarized-light" {% if theme == 'solarized-light' %}selected{% endif %}>Solarized</option>
                 </optgroup>
               </select>
             </div>
 
             <div class="flex items-center gap-2">
-              <input type="checkbox" id="linenos" name="linenos" {% if request.form.get('linenos') %}checked{% endif %} class="w-5 h-5">
+              <input type="checkbox" id="linenos" name="linenos" {% if linenos %}checked{% endif %} class="w-5 h-5">
               <label for="linenos" class="font-semibold">Números de línea</label>
             </div>
+
           </div>
           <!-- Fin de Tools -->
 
@@ -209,7 +210,7 @@
     <script src="{{ url_for('static', filename='js/codemirror-bundle.js') }}"></script>
     <script src="{{ url_for('static', filename='js/config-codemirror.js') }}"></script>
     <script src="{{ url_for('static', filename='js/main.js') }}" defer></script>
-    <script>
-    </script>
+    <style>
+    </style>
   </body>
 </html>

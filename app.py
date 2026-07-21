@@ -4,6 +4,7 @@ from core.formatter import format_code
 from werkzeug.utils import secure_filename
 from werkzeug.exceptions import RequestEntityTooLarge
 import os
+import re
 
 app = Flask(__name__)
 
@@ -33,16 +34,16 @@ def index():
     error = None
     formatted_html = None
     raw_code = '' 
+
+    language = request.form.get('language', 'cpp')
+    theme = request.form.get('theme', 'dracula')
+    linenos = request.form.get('linenos', True)
     
     if request.method == 'POST':
         code = request.form.get('code')
         file = request.files.get('file')
         raw_code = code
-
-        language = request.form.get('language', 'cpp')
-        theme = request.form.get('theme', 'monokai')
         linenos = request.form.get('linenos') == 'on'
-
         if code and len(code) > 100000:
             error = "El código excede el límite de 100,000 caracteres."
         elif file and file.filename:
@@ -57,8 +58,14 @@ def index():
         elif code:
             resultado = format_code(code, language, theme, linenos)
             formatted_html = resultado.html
-            
-    return render_template('index.html', formatted_html=formatted_html, error=error, raw_code = raw_code)
+
+    return render_template('index.html', 
+                        formatted_html=formatted_html, 
+                        error=error, 
+                        raw_code=raw_code,
+                        language=language,
+                        theme=theme,
+                        linenos=linenos)
 
 if __name__ == '__main__':
     app.run(debug=True)
