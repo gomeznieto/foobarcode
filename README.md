@@ -1,6 +1,6 @@
-# Moodlefy 🚀
+# FooBar Code 🚀
 
-Convierte tu código a HTML con resaltado de sintaxis y estilos inline. Ideal para pegar en Moodle, foros, y editores TinyMCE sin perder los colores.
+Convierte tu código a HTML con resaltado de sintaxis y estilos inline. Ideal para pegar en Aulas Virtuales (Moodle, Goole ClassRoom), foros, y editores TinyMCE sin perder los colores.
 
 ![Python](https://img.shields.io/badge/Python-3.14+-3776AB?logo=python&style=flat)
 ![Flask](https://img.shields.io/badge/Flask-3.0.0-000000?logo=flask&style=flat)
@@ -25,8 +25,8 @@ Convierte tu código a HTML con resaltado de sintaxis y estilos inline. Ideal pa
 
 ```bash
 # 1. Clonar el repositorio
-git clone https://github.com/gomeznieto/moodlefy.git
-cd moodlefy
+git clone https://github.com/gomeznieto/foobarcode.git
+cd foobarcode
 
 # 2. Crear entorno virtual (opcional pero recomendado)
 python -m venv venv
@@ -48,7 +48,7 @@ La app va a correr en `http://localhost:5000` 🎉
 2. **Elegí el lenguaje** del dropdown
 3. **Seleccioná el tema** que más te guste
 4. **Activá números de línea** si los necesitás
-5. **Hacé clic en "Moodleficar"**
+5. **Hacé clic en "Convertir"**
 6. **Copiá el HTML** resultante y pegalo donde necesites
 
 ## Tecnologías
