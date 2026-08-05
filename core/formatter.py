@@ -32,7 +32,7 @@ def format_code(code_string: str, language: str, theme: str, show_linenos: bool)
         formatted_html = insert_line_numbers(formatted_html)
     
     # Párrafos previo y posterior del bloque de código para facilitar escritura en Moodle
-    formatted_html = formatted_html.replace('<div class="highlight"', '<!--Creado en https://moodlefy.vercel.app/--><p></p><div class="highlight"')
+    formatted_html = formatted_html.replace('<div class="highlight"', '<p></p><!--Creado en https://foobarcode.vercel.app/--><div class="highlight"')
     formatted_html = formatted_html.replace('</table></div>', '</table></div><p></p>')
     
     return FormatterResult(html=formatted_html)
