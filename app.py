@@ -33,7 +33,7 @@ def index():
     """
     error = None
     formatted_html = None
-    raw_code = '' 
+    raw_code = '/*\n\t1. Seleccioná un lenguaje.\n\t2. Seleccioná un tema.\n\t3. Pegá tu código o subí un archivo.\n\t4. Hacé clic en "Convertir".\n*/' 
 
     language = request.form.get('language', 'cpp')
     theme = request.form.get('theme', 'dracula')

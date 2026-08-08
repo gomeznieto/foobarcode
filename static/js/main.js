@@ -1,3 +1,6 @@
+// Mensaje para Console
+console.log("Hola! 👋\n\nSi estás viendo esto, probablemente estás interesado en ver el código este proyecto.\n\nEncontralo en GitHub: https://github.com/gomeznieto/foobarcode\n\nSi querés colaborar, ¡no dudes en hacer un fork y enviar un pull request!\n\n¡Gracias por tu interés!");
+
 // Copy-clipboard
 function copyToClipboard() {
     const textarea = document.getElementById('html-result');

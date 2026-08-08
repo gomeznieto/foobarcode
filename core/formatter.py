@@ -48,7 +48,7 @@ def insert_line_numbers(html):
     pre_content = match.group(2)
     pre_close = match.group(3)
 
-    num_lines = pre_content.count('\n') + 1
+    num_lines = pre_content.count('\n')
     numbers = range(1, num_lines + 1)
 
     format_str = '%' + str(len(str(numbers[-1]))) + 'i'
