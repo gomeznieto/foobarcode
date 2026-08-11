@@ -47,12 +47,15 @@ def index():
         if code and len(code) > 100000:
             error = "El código excede el límite de 100,000 caracteres."
         elif file and file.filename:
+            raw_bytes = file.read()
             if allowed_file(file.filename):
                 sec_filename = secure_filename(file.filename)
                 try:
-                    raw_code = file.read().decode('utf-8')
+                    # Decodificar el contenido del archivo como UTF-8
+                    raw_code = raw_bytes.decode('utf-8')
                 except UnicodeDecodeError:
-                    error = "El archivo no es de texto válido o está corrupto."
+                    # Si falla, decodificar como cp1252 y reemplazar caracteres no válidos
+                    raw_code = raw_bytes.decode('cp1252', errors='replace')
             else:
                 error = "Error: Extensión de archivo no permitida. Suba un archivo de código válido."
         elif code:
